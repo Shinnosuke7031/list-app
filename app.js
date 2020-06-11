@@ -26,7 +26,6 @@ app.get('/', (req, res) => {
     'SELECT * FROM memos',
     (error, results) => {
       console.log(results);
-      //res.render('index.ejs', {memos: results});
       res.render('index.ejs', {memos: results});
     }
   );
