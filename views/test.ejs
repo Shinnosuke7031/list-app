@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NOSUKE MEMO</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+
+    <script src="/send_url.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/" class="header-logo">NOSUKE MEMO(ひとことメモ)</a>
+    </header>
+
+    <div class="container">
+
+      <div class="container-header">
+        <h1>MEMO LIST</h1>
+        <a href="/new" class="new-button">+ 新規メモ</a>
+      </div>
+
+      <div class="table">
+        <% console.log(memos[0]); %>
+
+        <div class="table-top">
+          <a href="javascript:FavoSort(memos);"><i class="far fa-star"></i></a>
+          <span>メモ</span>
+        </div>
+
+        <ul class="table-body">
+          <% memos.forEach((memo) => { %>
+
+            <li>
+              <div class="memo-data">
+                <span class="favo-column">
+                  <% if (memo.favorite == 1) { %>
+                      <i class="far fa-star"></i>
+                  <% } %>
+                </span>
+                <span class="memo-column"><%= memo.memo %></span>
+              </div>
+            </li>
+          <% }); %>
+        </ul>
+
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+    <script src="funk.js"></script>
+  </body>
+
+</html>
