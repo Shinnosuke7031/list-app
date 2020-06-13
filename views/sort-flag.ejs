@@ -24,8 +24,7 @@
 
         <div class="table-top">
           <div class="tag-icon">
-            <a href="/sort-star"><i class="far fa-star"></i></a>
-            <a href="/sort-flag"><i class="far fa-flag"></i></a>
+            <a href="/"><i class="fas fa-undo-alt"></i></a>
           </div>
           <span>メモ</span>
         </div>
@@ -35,11 +34,11 @@
             <li>
               <div class="memo-data">
                 <span class="favo-column">
-                <% if (memo.favorite == 1) { %>
-                    <i class="far fa-flag"></i>
-                <% } else if (memo.favorite == 2) { %>
-                    <i class="far fa-star"></i>
-                <% } %>
+                  <% if (memo.favorite == 1) { %>
+                      <i class="far fa-flag"></i>
+                  <% } else if (memo.favorite == 2) { %>
+                      <i class="far fa-star"></i>
+                  <% } %>
                 </span>
                 <span class="memo-column"><%= memo.memo %></span>
               </div>

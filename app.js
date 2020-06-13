@@ -31,4 +31,51 @@ app.get('/', (req, res) => {
   );
 });
 
+app.get('/index', (req, res) => {
+  connection.query(
+    'SELECT * FROM memos',
+    (error, results) => {
+      console.log(results);
+      res.render('index.ejs', {memos: results});
+    }
+  );
+});
+
+app.get('/sort-star', (req, res) => {
+  connection.query(
+    //'SELECT * FROM memos ORDER BY favorite=1, favorite DESC',
+    'SELECT * FROM memos ORDER BY CASE favorite WHEN 2 THEN 1 ELSE 2 END, favorite DESC',
+    (error, results) => {
+      console.log(results);
+      res.render('sort-star.ejs', {memos: results});
+    }
+  );
+});
+
+app.get('/sort-flag', (req, res) => {
+  connection.query(
+    //'SELECT * FROM memos ORDER BY favorite=1, favorite DESC',
+    'SELECT * FROM memos ORDER BY CASE favorite WHEN 1 THEN 1 ELSE 2 END, favorite DESC',
+    (error, results) => {
+      console.log(results);
+      res.render('sort-flag.ejs', {memos: results});
+    }
+  );
+});
+
+app.get('/new', (req, res) => {
+  res.render('new.ejs');
+});
+
+app.post('/create', (req, res) => {
+  connection.query(
+    'INSERT INTO memos (memo, favorite) VALUES (?, ?)',
+    [req.body.MemosMemo, req.body.MemosFavo],
+    (error, results) => {
+      res.redirect("/index");
+
+    }
+  );
+});
+
 app.listen(3000);

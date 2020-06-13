@@ -5,7 +5,7 @@
 
 html {
   font-size: 100%;
-  font-family: 'Hiragino Sans', sans-serif;
+  font-family: 'Hiragino Sans', sans-serif, 'Font Awesome 5 Free';
   line-height: 1.7;
   letter-spacing: 1px;
 }
@@ -47,6 +47,11 @@ a:hover {
 
 span {
   display: inline-block;
+}
+
+select {
+  font-family: inherit;
+  font-size: 100%;
 }
 
 
@@ -108,15 +113,20 @@ header {
   color: #ffffff;
 }
 
-.table-top a {
+.tag-icon {
   width: 100px;
   text-align: center;
+}
+
+.table-top a {
+  display: inline-block;
   color: white;
+  width: 20px;
 }
 
 .table-top span {
-  padding-left: 8px;
   color: white;
+  padding-left: 5px;
 }
 
 .table-top a:hover {
@@ -134,4 +144,84 @@ header {
   width: 100px;
   text-align: center;
   display:inline-block;
+}
+
+.cancel-button {
+  margin-top: 16px;
+  margin-left: 2px;
+  font-weight: 600;
+  color: #bac6d3;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+.cancel-button:hover {
+  color: #80bcff;
+}
+
+/* new, edit ================================ */
+.item-form-wrapper {
+  background-color: #ffffff;
+  border: 1px solid #f0f4f9;
+  border-radius: 0px 0px 2px 2px;
+  padding: 32px;
+}
+
+.form-label {
+  font-size: 14px;
+  color: #8491a5;
+}
+
+.tag-label {
+  font-size: 14px;
+  color: #8491a5;
+}
+
+.item-form-wrapper select {
+  width: 10%;
+  height: 40px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #fcfcfd;
+  border: 1px solid #bac6d3;
+  border-radius: 2px;
+  font-size: 16px;
+}
+
+.item-form-wrapper option {
+  font-size: 16px;
+  color: #8491a5;
+}
+
+.item-form-wrapper input[type="text"] {
+  width: 100%;
+  height: 40px;
+  margin-top: 8px;
+  padding: 12px 16px;
+  background-color: #fcfcfd;
+  border: 1px solid #bac6d3;
+  border-radius: 2px;
+  color: #2b546a;
+  font-size: 16px;
+}
+
+.item-form-wrapper input[type="submit"] {
+  display: block;
+  width: 120px;
+  height: 45px;
+  margin-top: 24px;
+  margin-left: auto;
+  border-radius: 30px;
+  font-size: 14px;
+  background-color: #80bcff;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid #80bcff;
+}
+
+.item-form-wrapper input[type="submit"]:hover {
+  background-color: #ffffff;
+  color: #80bcff;
+  transition: all 0.3s ease;
 }
