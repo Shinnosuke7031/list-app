@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SHINNOSUKE PRACTICE</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+
+  </head>
+
+  <body>
+    <header>
+      <a href="/" class="header-logo">SHINNOSUKE PRACTICE</a>
+    </header>
+
+    <div class="container">
+
+      <div class="container-header">
+        <h1>ひとことメモ</h1>
+        <a href="/new" class="new-button">+ 新規メモ</a>
+      </div>
+
+      <div class="table">
+
+        <div class="table-top">
+          <div class="tag-icon">
+            <a href="/sort-star"><i class="far fa-star"></i></a>
+            <a href="/sort-flag"><i class="far fa-flag"></i></a>
+          </div>
+          <span>メモ</span>
+        </div>
+
+        <ul class="table-body">
+          <% memos.forEach((memo) => { %>
+            <li>
+              <div class="memo-data">
+                <div class="favo-column">
+                <% if (memo.favorite == 1) { %>
+                    <i class="far fa-flag"></i>
+                <% } else if (memo.favorite == 2) { %>
+                    <i class="far fa-star"></i>
+                <% } %>
+                </div>
+                <div class="memo-column"><%= memo.memo %></div>
+                <div class="memo-menu">
+                  <form action="/delete/<%= memo.id %>" method="post">
+                    <input type="submit" value="削除">
+                  </form>
+                  <a href="/edit/<%= memo.id %>">編集</a>
+                </div>
+              </div>
+            </li>
+          <% }); %>
+        </ul>
+
+      </div>
+
+
+    </div>
+
+  </body>
+
+</html>
