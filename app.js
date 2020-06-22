@@ -6,7 +6,6 @@ var app = express();
 
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
-
 /* 2. listen()メソッドを実行して3000番ポートで待ち受け。*/
 var server = app.listen(3000, function(){
     console.log("Node.js is listening to PORT:" + server.address().port);
