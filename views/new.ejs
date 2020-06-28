@@ -17,11 +17,11 @@
       <div class="memo-form-wrapper">
         <form action="/create" method="post">
           <p class="form-label">タグ</p>
-          <select name="MemosFavo" class="tag-label">
-            <option value="0">なし</option>
-            <option value="1" font-weight=400> &#xf024; </option>
-            <option value="2" font-weight=400> &#xf005; </option>
-          </select></br>
+          <p class="tag-label">
+            <input type="radio" name="MemosFavo" value="0">なし
+            <input type="radio" name="MemosFavo" value="1" font-weight=400> &#xf024;
+            <input type="radio" name="MemosFavo" value="2" font-weight=400> &#xf005;
+          </p>
           <p class="form-label">内容</p>
           <input type="text" name="MemosMemo">
           <input type="submit" value="作成する">
